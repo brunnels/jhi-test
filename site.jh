@@ -1,0 +1,60 @@
+entity Document {
+    title String required
+    size Long required
+    mimeType String
+}
+
+entity DocumentContent {
+    data Blob required
+}
+
+entity Site {
+    siteContact String,
+    updatedAt ZonedDateTime required,
+    deletedAt ZonedDateTime
+}
+
+entity SiteCategory {
+    name String required
+}
+
+entity RealtyData {
+    worldRegion String maxlength(700),
+    region String maxlength(700),
+    subregion String maxlength(150),
+    deviceRegion String maxlength(20),
+    country String maxlength(50),
+    countryIso2 String maxlength(2),
+    countryIso3 String maxlength(3),
+    stateAbbrev String maxlength(70),
+    stateFull String maxlength(150),
+    city String maxlength(700),
+    commonName String maxlength(150),
+    address1 String maxlength(150),
+    postalCode String maxlength(25),
+    latitude Double,
+    longitude Double,
+    buildingStatus String maxlength(50),
+    primaryUse String maxlength(150),
+    capacity Long,
+    headcount Long,
+    occupied Long,
+    colocation String maxlength(15),
+    facilityName String maxlength(400),
+    buildingImagePath String maxlength(150),
+    updatedAt ZonedDateTime required,
+    deletedAt ZonedDateTime
+}
+
+relationship OneToOne {
+    Site{ realtyData }  to RealtyData{ site(id) required },
+    Document{ content } to DocumentContent{ document(id) required }
+}
+
+relationship OneToMany {
+    Site{ document } to Document{ site(id) required }
+}
+
+relationship ManyToOne {
+	Site{ category(name) } to SiteCategory
+}
