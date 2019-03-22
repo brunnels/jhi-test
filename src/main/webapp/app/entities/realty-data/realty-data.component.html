@@ -1,0 +1,102 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="testApp.realtyData.home.title">Realty Data</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-realty-data" [routerLink]="['/realty-data/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="testApp.realtyData.home.createLabel">
+            Create new Realty Data
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="table-responsive" *ngIf="realtyData">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span jhiTranslate="global.field.id">ID</span></th>
+            <th><span jhiTranslate="testApp.realtyData.worldRegion">World Region</span></th>
+            <th><span jhiTranslate="testApp.realtyData.region">Region</span></th>
+            <th><span jhiTranslate="testApp.realtyData.subregion">Subregion</span></th>
+            <th><span jhiTranslate="testApp.realtyData.deviceRegion">Device Region</span></th>
+            <th><span jhiTranslate="testApp.realtyData.country">Country</span></th>
+            <th><span jhiTranslate="testApp.realtyData.countryIso2">Country Iso 2</span></th>
+            <th><span jhiTranslate="testApp.realtyData.countryIso3">Country Iso 3</span></th>
+            <th><span jhiTranslate="testApp.realtyData.stateAbbrev">State Abbrev</span></th>
+            <th><span jhiTranslate="testApp.realtyData.stateFull">State Full</span></th>
+            <th><span jhiTranslate="testApp.realtyData.city">City</span></th>
+            <th><span jhiTranslate="testApp.realtyData.commonName">Common Name</span></th>
+            <th><span jhiTranslate="testApp.realtyData.address1">Address 1</span></th>
+            <th><span jhiTranslate="testApp.realtyData.postalCode">Postal Code</span></th>
+            <th><span jhiTranslate="testApp.realtyData.latitude">Latitude</span></th>
+            <th><span jhiTranslate="testApp.realtyData.longitude">Longitude</span></th>
+            <th><span jhiTranslate="testApp.realtyData.buildingStatus">Building Status</span></th>
+            <th><span jhiTranslate="testApp.realtyData.primaryUse">Primary Use</span></th>
+            <th><span jhiTranslate="testApp.realtyData.capacity">Capacity</span></th>
+            <th><span jhiTranslate="testApp.realtyData.headcount">Headcount</span></th>
+            <th><span jhiTranslate="testApp.realtyData.occupied">Occupied</span></th>
+            <th><span jhiTranslate="testApp.realtyData.colocation">Colocation</span></th>
+            <th><span jhiTranslate="testApp.realtyData.facilityName">Facility Name</span></th>
+            <th><span jhiTranslate="testApp.realtyData.buildingImagePath">Building Image Path</span></th>
+            <th><span jhiTranslate="testApp.realtyData.updatedAt">Updated At</span></th>
+            <th><span jhiTranslate="testApp.realtyData.deletedAt">Deleted At</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let realtyData of realtyData ;trackBy: trackId">
+                <td><a [routerLink]="['/realty-data', realtyData.id, 'view' ]">{{realtyData.id}}</a></td>
+                <td>{{realtyData.worldRegion}}</td>
+                <td>{{realtyData.region}}</td>
+                <td>{{realtyData.subregion}}</td>
+                <td>{{realtyData.deviceRegion}}</td>
+                <td>{{realtyData.country}}</td>
+                <td>{{realtyData.countryIso2}}</td>
+                <td>{{realtyData.countryIso3}}</td>
+                <td>{{realtyData.stateAbbrev}}</td>
+                <td>{{realtyData.stateFull}}</td>
+                <td>{{realtyData.city}}</td>
+                <td>{{realtyData.commonName}}</td>
+                <td>{{realtyData.address1}}</td>
+                <td>{{realtyData.postalCode}}</td>
+                <td>{{realtyData.latitude}}</td>
+                <td>{{realtyData.longitude}}</td>
+                <td>{{realtyData.buildingStatus}}</td>
+                <td>{{realtyData.primaryUse}}</td>
+                <td>{{realtyData.capacity}}</td>
+                <td>{{realtyData.headcount}}</td>
+                <td>{{realtyData.occupied}}</td>
+                <td>{{realtyData.colocation}}</td>
+                <td>{{realtyData.facilityName}}</td>
+                <td>{{realtyData.buildingImagePath}}</td>
+                <td>{{realtyData.updatedAt | date:'medium'}}</td>
+                <td>{{realtyData.deletedAt | date:'medium'}}</td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['/realty-data', realtyData.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/realty-data', realtyData.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', 'realty-data', { outlets: { popup: realtyData.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

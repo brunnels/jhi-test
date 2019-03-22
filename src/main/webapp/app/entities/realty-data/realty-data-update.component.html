@@ -1,0 +1,277 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-realty-data-heading" jhiTranslate="testApp.realtyData.home.createOrEditLabel">Create or edit a Realty Data</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!realtyData.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="realtyData.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="testApp.realtyData.worldRegion" for="field_worldRegion">World Region</label>
+                    <input type="text" class="form-control" name="worldRegion" id="field_worldRegion"
+                        [(ngModel)]="realtyData.worldRegion" maxlength="700"/>
+                    <div [hidden]="!(editForm.controls.worldRegion?.dirty && editForm.controls.worldRegion?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.worldRegion?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" [translateValues]="{ max: 700 }">
+                        This field cannot be longer than 700 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="testApp.realtyData.region" for="field_region">Region</label>
+                    <input type="text" class="form-control" name="region" id="field_region"
+                        [(ngModel)]="realtyData.region" maxlength="700"/>
+                    <div [hidden]="!(editForm.controls.region?.dirty && editForm.controls.region?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.region?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" [translateValues]="{ max: 700 }">
+                        This field cannot be longer than 700 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="testApp.realtyData.subregion" for="field_subregion">Subregion</label>
+                    <input type="text" class="form-control" name="subregion" id="field_subregion"
+                        [(ngModel)]="realtyData.subregion" maxlength="150"/>
+                    <div [hidden]="!(editForm.controls.subregion?.dirty && editForm.controls.subregion?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.subregion?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" [translateValues]="{ max: 150 }">
+                        This field cannot be longer than 150 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="testApp.realtyData.deviceRegion" for="field_deviceRegion">Device Region</label>
+                    <input type="text" class="form-control" name="deviceRegion" id="field_deviceRegion"
+                        [(ngModel)]="realtyData.deviceRegion" maxlength="20"/>
+                    <div [hidden]="!(editForm.controls.deviceRegion?.dirty && editForm.controls.deviceRegion?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.deviceRegion?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" [translateValues]="{ max: 20 }">
+                        This field cannot be longer than 20 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="testApp.realtyData.country" for="field_country">Country</label>
+                    <input type="text" class="form-control" name="country" id="field_country"
+                        [(ngModel)]="realtyData.country" maxlength="50"/>
+                    <div [hidden]="!(editForm.controls.country?.dirty && editForm.controls.country?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.country?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" [translateValues]="{ max: 50 }">
+                        This field cannot be longer than 50 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="testApp.realtyData.countryIso2" for="field_countryIso2">Country Iso 2</label>
+                    <input type="text" class="form-control" name="countryIso2" id="field_countryIso2"
+                        [(ngModel)]="realtyData.countryIso2" maxlength="2"/>
+                    <div [hidden]="!(editForm.controls.countryIso2?.dirty && editForm.controls.countryIso2?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.countryIso2?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" [translateValues]="{ max: 2 }">
+                        This field cannot be longer than 2 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="testApp.realtyData.countryIso3" for="field_countryIso3">Country Iso 3</label>
+                    <input type="text" class="form-control" name="countryIso3" id="field_countryIso3"
+                        [(ngModel)]="realtyData.countryIso3" maxlength="3"/>
+                    <div [hidden]="!(editForm.controls.countryIso3?.dirty && editForm.controls.countryIso3?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.countryIso3?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" [translateValues]="{ max: 3 }">
+                        This field cannot be longer than 3 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="testApp.realtyData.stateAbbrev" for="field_stateAbbrev">State Abbrev</label>
+                    <input type="text" class="form-control" name="stateAbbrev" id="field_stateAbbrev"
+                        [(ngModel)]="realtyData.stateAbbrev" maxlength="70"/>
+                    <div [hidden]="!(editForm.controls.stateAbbrev?.dirty && editForm.controls.stateAbbrev?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.stateAbbrev?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" [translateValues]="{ max: 70 }">
+                        This field cannot be longer than 70 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="testApp.realtyData.stateFull" for="field_stateFull">State Full</label>
+                    <input type="text" class="form-control" name="stateFull" id="field_stateFull"
+                        [(ngModel)]="realtyData.stateFull" maxlength="150"/>
+                    <div [hidden]="!(editForm.controls.stateFull?.dirty && editForm.controls.stateFull?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.stateFull?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" [translateValues]="{ max: 150 }">
+                        This field cannot be longer than 150 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="testApp.realtyData.city" for="field_city">City</label>
+                    <input type="text" class="form-control" name="city" id="field_city"
+                        [(ngModel)]="realtyData.city" maxlength="700"/>
+                    <div [hidden]="!(editForm.controls.city?.dirty && editForm.controls.city?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.city?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" [translateValues]="{ max: 700 }">
+                        This field cannot be longer than 700 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="testApp.realtyData.commonName" for="field_commonName">Common Name</label>
+                    <input type="text" class="form-control" name="commonName" id="field_commonName"
+                        [(ngModel)]="realtyData.commonName" maxlength="150"/>
+                    <div [hidden]="!(editForm.controls.commonName?.dirty && editForm.controls.commonName?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.commonName?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" [translateValues]="{ max: 150 }">
+                        This field cannot be longer than 150 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="testApp.realtyData.address1" for="field_address1">Address 1</label>
+                    <input type="text" class="form-control" name="address1" id="field_address1"
+                        [(ngModel)]="realtyData.address1" maxlength="150"/>
+                    <div [hidden]="!(editForm.controls.address1?.dirty && editForm.controls.address1?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.address1?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" [translateValues]="{ max: 150 }">
+                        This field cannot be longer than 150 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="testApp.realtyData.postalCode" for="field_postalCode">Postal Code</label>
+                    <input type="text" class="form-control" name="postalCode" id="field_postalCode"
+                        [(ngModel)]="realtyData.postalCode" maxlength="25"/>
+                    <div [hidden]="!(editForm.controls.postalCode?.dirty && editForm.controls.postalCode?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.postalCode?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" [translateValues]="{ max: 25 }">
+                        This field cannot be longer than 25 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="testApp.realtyData.latitude" for="field_latitude">Latitude</label>
+                    <input type="number" class="form-control" name="latitude" id="field_latitude"
+                        [(ngModel)]="realtyData.latitude" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="testApp.realtyData.longitude" for="field_longitude">Longitude</label>
+                    <input type="number" class="form-control" name="longitude" id="field_longitude"
+                        [(ngModel)]="realtyData.longitude" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="testApp.realtyData.buildingStatus" for="field_buildingStatus">Building Status</label>
+                    <input type="text" class="form-control" name="buildingStatus" id="field_buildingStatus"
+                        [(ngModel)]="realtyData.buildingStatus" maxlength="50"/>
+                    <div [hidden]="!(editForm.controls.buildingStatus?.dirty && editForm.controls.buildingStatus?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.buildingStatus?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" [translateValues]="{ max: 50 }">
+                        This field cannot be longer than 50 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="testApp.realtyData.primaryUse" for="field_primaryUse">Primary Use</label>
+                    <input type="text" class="form-control" name="primaryUse" id="field_primaryUse"
+                        [(ngModel)]="realtyData.primaryUse" maxlength="150"/>
+                    <div [hidden]="!(editForm.controls.primaryUse?.dirty && editForm.controls.primaryUse?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.primaryUse?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" [translateValues]="{ max: 150 }">
+                        This field cannot be longer than 150 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="testApp.realtyData.capacity" for="field_capacity">Capacity</label>
+                    <input type="number" class="form-control" name="capacity" id="field_capacity"
+                        [(ngModel)]="realtyData.capacity" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="testApp.realtyData.headcount" for="field_headcount">Headcount</label>
+                    <input type="number" class="form-control" name="headcount" id="field_headcount"
+                        [(ngModel)]="realtyData.headcount" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="testApp.realtyData.occupied" for="field_occupied">Occupied</label>
+                    <input type="number" class="form-control" name="occupied" id="field_occupied"
+                        [(ngModel)]="realtyData.occupied" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="testApp.realtyData.colocation" for="field_colocation">Colocation</label>
+                    <input type="text" class="form-control" name="colocation" id="field_colocation"
+                        [(ngModel)]="realtyData.colocation" maxlength="15"/>
+                    <div [hidden]="!(editForm.controls.colocation?.dirty && editForm.controls.colocation?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.colocation?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" [translateValues]="{ max: 15 }">
+                        This field cannot be longer than 15 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="testApp.realtyData.facilityName" for="field_facilityName">Facility Name</label>
+                    <input type="text" class="form-control" name="facilityName" id="field_facilityName"
+                        [(ngModel)]="realtyData.facilityName" maxlength="400"/>
+                    <div [hidden]="!(editForm.controls.facilityName?.dirty && editForm.controls.facilityName?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.facilityName?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" [translateValues]="{ max: 400 }">
+                        This field cannot be longer than 400 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="testApp.realtyData.buildingImagePath" for="field_buildingImagePath">Building Image Path</label>
+                    <input type="text" class="form-control" name="buildingImagePath" id="field_buildingImagePath"
+                        [(ngModel)]="realtyData.buildingImagePath" maxlength="150"/>
+                    <div [hidden]="!(editForm.controls.buildingImagePath?.dirty && editForm.controls.buildingImagePath?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.buildingImagePath?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" [translateValues]="{ max: 150 }">
+                        This field cannot be longer than 150 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="testApp.realtyData.updatedAt" for="field_updatedAt">Updated At</label>
+                    <div class="d-flex">
+                        <input id="field_updatedAt" type="datetime-local" class="form-control" name="updatedAt" [(ngModel)]="updatedAt" placeholder="YYYY-MM-DD HH:mm"
+                        required/>
+                    </div>
+                    <div [hidden]="!(editForm.controls.updatedAt?.dirty && editForm.controls.updatedAt?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.updatedAt?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.controls.updatedAt?.errors?.ZonedDateTimelocal" jhiTranslate="entity.validation.ZonedDateTimelocal">
+                            This field should be a date and time.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="testApp.realtyData.deletedAt" for="field_deletedAt">Deleted At</label>
+                    <div class="d-flex">
+                        <input id="field_deletedAt" type="datetime-local" class="form-control" name="deletedAt" [(ngModel)]="deletedAt" placeholder="YYYY-MM-DD HH:mm"
+                        />
+                    </div>
+                </div>
+
+                <div [hidden]="!(editForm.controls.site?.dirty && editForm.controls.site?.invalid)">
+                    <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.site?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                    </small>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

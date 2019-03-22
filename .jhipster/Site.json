@@ -1,0 +1,52 @@
+{
+    "name": "Site",
+    "fields": [
+        {
+            "fieldName": "siteContact",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "updatedAt",
+            "fieldType": "ZonedDateTime",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "deletedAt",
+            "fieldType": "ZonedDateTime"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "realtyData",
+            "otherEntityRelationshipName": "site",
+            "relationshipName": "realtyData",
+            "otherEntityField": "id",
+            "ownerSide": true
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "document",
+            "otherEntityRelationshipName": "site",
+            "relationshipName": "document"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "siteCategory",
+            "otherEntityRelationshipName": "site",
+            "relationshipName": "category",
+            "otherEntityField": "name"
+        }
+    ],
+    "changelogDate": "20190322123302",
+    "entityTableName": "site",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}
