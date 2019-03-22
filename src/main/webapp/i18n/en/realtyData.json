@@ -1,0 +1,46 @@
+{
+    "testApp": {
+        "realtyData": {
+            "home": {
+                "title": "Realty Data",
+                "createLabel": "Create a new Realty Data",
+                "createOrEditLabel": "Create or edit a Realty Data"
+            },
+            "created": "A new Realty Data is created with identifier {{ param }}",
+            "updated": "A Realty Data is updated with identifier {{ param }}",
+            "deleted": "A Realty Data is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Realty Data {{ id }}?"
+            },
+            "detail": {
+                "title": "Realty Data"
+            },
+            "worldRegion": "World Region",
+            "region": "Region",
+            "subregion": "Subregion",
+            "deviceRegion": "Device Region",
+            "country": "Country",
+            "countryIso2": "Country Iso 2",
+            "countryIso3": "Country Iso 3",
+            "stateAbbrev": "State Abbrev",
+            "stateFull": "State Full",
+            "city": "City",
+            "commonName": "Common Name",
+            "address1": "Address 1",
+            "postalCode": "Postal Code",
+            "latitude": "Latitude",
+            "longitude": "Longitude",
+            "buildingStatus": "Building Status",
+            "primaryUse": "Primary Use",
+            "capacity": "Capacity",
+            "headcount": "Headcount",
+            "occupied": "Occupied",
+            "colocation": "Colocation",
+            "facilityName": "Facility Name",
+            "buildingImagePath": "Building Image Path",
+            "updatedAt": "Updated At",
+            "deletedAt": "Deleted At",
+            "site": "Site"
+        }
+    }
+}

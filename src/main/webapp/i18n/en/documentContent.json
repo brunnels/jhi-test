@@ -1,0 +1,22 @@
+{
+    "testApp": {
+        "documentContent": {
+            "home": {
+                "title": "Document Contents",
+                "createLabel": "Create a new Document Content",
+                "createOrEditLabel": "Create or edit a Document Content"
+            },
+            "created": "A new Document Content is created with identifier {{ param }}",
+            "updated": "A Document Content is updated with identifier {{ param }}",
+            "deleted": "A Document Content is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Document Content {{ id }}?"
+            },
+            "detail": {
+                "title": "Document Content"
+            },
+            "data": "Data",
+            "document": "Document"
+        }
+    }
+}

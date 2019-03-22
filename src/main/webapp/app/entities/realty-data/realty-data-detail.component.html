@@ -1,0 +1,123 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="realtyData">
+            <h2><span jhiTranslate="testApp.realtyData.detail.title">Realty Data</span> {{realtyData.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="testApp.realtyData.worldRegion">World Region</span></dt>
+                <dd>
+                    <span>{{realtyData.worldRegion}}</span>
+                </dd>
+                <dt><span jhiTranslate="testApp.realtyData.region">Region</span></dt>
+                <dd>
+                    <span>{{realtyData.region}}</span>
+                </dd>
+                <dt><span jhiTranslate="testApp.realtyData.subregion">Subregion</span></dt>
+                <dd>
+                    <span>{{realtyData.subregion}}</span>
+                </dd>
+                <dt><span jhiTranslate="testApp.realtyData.deviceRegion">Device Region</span></dt>
+                <dd>
+                    <span>{{realtyData.deviceRegion}}</span>
+                </dd>
+                <dt><span jhiTranslate="testApp.realtyData.country">Country</span></dt>
+                <dd>
+                    <span>{{realtyData.country}}</span>
+                </dd>
+                <dt><span jhiTranslate="testApp.realtyData.countryIso2">Country Iso 2</span></dt>
+                <dd>
+                    <span>{{realtyData.countryIso2}}</span>
+                </dd>
+                <dt><span jhiTranslate="testApp.realtyData.countryIso3">Country Iso 3</span></dt>
+                <dd>
+                    <span>{{realtyData.countryIso3}}</span>
+                </dd>
+                <dt><span jhiTranslate="testApp.realtyData.stateAbbrev">State Abbrev</span></dt>
+                <dd>
+                    <span>{{realtyData.stateAbbrev}}</span>
+                </dd>
+                <dt><span jhiTranslate="testApp.realtyData.stateFull">State Full</span></dt>
+                <dd>
+                    <span>{{realtyData.stateFull}}</span>
+                </dd>
+                <dt><span jhiTranslate="testApp.realtyData.city">City</span></dt>
+                <dd>
+                    <span>{{realtyData.city}}</span>
+                </dd>
+                <dt><span jhiTranslate="testApp.realtyData.commonName">Common Name</span></dt>
+                <dd>
+                    <span>{{realtyData.commonName}}</span>
+                </dd>
+                <dt><span jhiTranslate="testApp.realtyData.address1">Address 1</span></dt>
+                <dd>
+                    <span>{{realtyData.address1}}</span>
+                </dd>
+                <dt><span jhiTranslate="testApp.realtyData.postalCode">Postal Code</span></dt>
+                <dd>
+                    <span>{{realtyData.postalCode}}</span>
+                </dd>
+                <dt><span jhiTranslate="testApp.realtyData.latitude">Latitude</span></dt>
+                <dd>
+                    <span>{{realtyData.latitude}}</span>
+                </dd>
+                <dt><span jhiTranslate="testApp.realtyData.longitude">Longitude</span></dt>
+                <dd>
+                    <span>{{realtyData.longitude}}</span>
+                </dd>
+                <dt><span jhiTranslate="testApp.realtyData.buildingStatus">Building Status</span></dt>
+                <dd>
+                    <span>{{realtyData.buildingStatus}}</span>
+                </dd>
+                <dt><span jhiTranslate="testApp.realtyData.primaryUse">Primary Use</span></dt>
+                <dd>
+                    <span>{{realtyData.primaryUse}}</span>
+                </dd>
+                <dt><span jhiTranslate="testApp.realtyData.capacity">Capacity</span></dt>
+                <dd>
+                    <span>{{realtyData.capacity}}</span>
+                </dd>
+                <dt><span jhiTranslate="testApp.realtyData.headcount">Headcount</span></dt>
+                <dd>
+                    <span>{{realtyData.headcount}}</span>
+                </dd>
+                <dt><span jhiTranslate="testApp.realtyData.occupied">Occupied</span></dt>
+                <dd>
+                    <span>{{realtyData.occupied}}</span>
+                </dd>
+                <dt><span jhiTranslate="testApp.realtyData.colocation">Colocation</span></dt>
+                <dd>
+                    <span>{{realtyData.colocation}}</span>
+                </dd>
+                <dt><span jhiTranslate="testApp.realtyData.facilityName">Facility Name</span></dt>
+                <dd>
+                    <span>{{realtyData.facilityName}}</span>
+                </dd>
+                <dt><span jhiTranslate="testApp.realtyData.buildingImagePath">Building Image Path</span></dt>
+                <dd>
+                    <span>{{realtyData.buildingImagePath}}</span>
+                </dd>
+                <dt><span jhiTranslate="testApp.realtyData.updatedAt">Updated At</span></dt>
+                <dd>
+                    <span>{{realtyData.updatedAt}}</span>
+                </dd>
+                <dt><span jhiTranslate="testApp.realtyData.deletedAt">Deleted At</span></dt>
+                <dd>
+                    <span>{{realtyData.deletedAt}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/realty-data', realtyData.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>
